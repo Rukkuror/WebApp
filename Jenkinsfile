@@ -12,7 +12,8 @@ node {
 
 		//Step git clone from master
 		stage('Clone sources') {
-			git url: 'https://github.com/dharmendrasoni12/webapp.git'
+			//git url: 'https://github.com/rukkuror/webapp.git'
+			checkout([$class: 'GitSCM', branches: [[name: '*/feature']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/rukkuror/webapp.git']]])
 		}
 		
 		//Step Artifactory configuration
